@@ -1,5 +1,5 @@
 import { sa } from './sensorsdata.min';
-import { param } from '../utils/util';
+import { param } from '../utils/utils';
 // import { formatTime } from '../utils/util';
 
 /**

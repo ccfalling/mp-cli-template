@@ -1,5 +1,5 @@
 import * as routes from '../../routes';
-import { param } from '../../utils/util';
+import { param } from '../../utils/utils';
 
 Page({
     onLoad(opt) {

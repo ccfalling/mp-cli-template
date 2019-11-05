@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from './redux';
 import initStatusReducer from './reducers/InitStatus';
 import isAuthReducer from './reducers/isAuth';
 

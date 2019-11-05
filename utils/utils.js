@@ -25,6 +25,24 @@ export function isEmptyObject(object) {
 }
 
 /**
+ * 将微信小程序的回调变成 Promise
+ *
+ * @param fn
+ * @return {function(*, ...[*]): Promise<any>}
+ */
+export function promisify(fn) {
+    return function (object, ...other) {
+        return new Promise((resolve, reject) => {
+            fn.apply(null, [{
+                ...object,
+                success: resolve,
+                fail: reject
+            }, ...other]);
+        });
+    }
+}
+
+/**
  * 广告是否展示计算函数
  * @param {*} b 首次展示位置
  * @param {*} a 广告位间隔数

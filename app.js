@@ -1,3 +1,5 @@
+require('./sensor/app');
+
 //app.js
 App({
   onLaunch: function () {

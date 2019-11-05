@@ -1,18 +1,13 @@
-{
+export default {
 	"projectid": "1108100302",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"remoteDebugLogEnable": false,
-		"uploadWithSourceMap": true,
-		"nodeModules": true,
-		"uglifyFileName": true
+		"autoAudits": false
 	},
-	"sensorsdataUrl": "https://bi.52miniapps.com/sa?project=miniapp_qmzs",
 	"qqLibVersion": "1.8.0",
 	"compileType": "miniprogram",
 	"createTime": 1569484581896,
@@ -26,10 +21,7 @@
 	"appid": "1108100302",
 	"projectname": "214",
 	"qqappid": "1108100302",
-	"scripts": {
-		"beforeCompile": "",
-		"beforePreview": "",
-		"beforeUpload": ""
-	},
-	"condition": {}
+	"condition": {},
+	"sensorsdataUrl": "https://bi.52miniapps.com/sa?project=miniapp_qmzs",
+	"debug": false
 }
