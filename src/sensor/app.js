@@ -2,7 +2,7 @@ global.eval = () => {};
 
 import { sa } from './sensorsdata.min';
 import { getCommonParam, getQueryInfo } from './sensors';
-import {report, sendReportRequest} from './report';
+import { report, sendReportRequest } from './report';
 // import dataStorage from '../globalData/data_storage';
 // import { formatTime } from '../utils/utils';
 // import {getUserKey} from "../utils/user-key";
