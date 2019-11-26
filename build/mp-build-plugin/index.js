@@ -30,10 +30,20 @@ class MpBuildPlugin {
     }
 
     analyzeMPFile(compiler) {
-        const entry = path.resolve(compiler.options.context, compiler.options.entry);
+        const appEntry = typeof compiler.options.entry === 'string' ? compiler.options.entry : compiler.options.entry.pop();
+        // 热更新时无入口不进行下一步
+        if(!appEntry) {
+            return;
+        }
+        const entry = path.resolve(compiler.options.context, appEntry);
         this.mpRoot = path.dirname(entry);
         const appJsonPath = path.resolve(this.mpRoot, 'app.json');
         const appConfig = this.getJson(appJsonPath);
+        // 热更新无法读取app.json 原因未找到
+        if (!appConfig) {
+            console.warn('app.json is not defind')
+            return;
+        }
         // 分析页面依赖
         this.pages = this.pages.concat(appConfig.pages);
         if (appConfig.subpackages) {
@@ -66,8 +76,11 @@ class MpBuildPlugin {
     }
 
     getJson(path) {
-        const content = fs.readFileSync(path, 'utf8');
-        return JSON.parse(content);
+        try {
+            return JSON.parse(fs.readFileSync(path, 'utf8'));
+        } catch (ex) {
+            return null;
+        }
     }
 
     registerModuleEntry(compiler) {

@@ -1,6 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const MpBuildPlugin = require('../mp-build-plugin');
+const MpBuildPlugin = require('./mp-build-plugin');
 const src = path.resolve(__dirname, '../src');
 
 module.exports = {
