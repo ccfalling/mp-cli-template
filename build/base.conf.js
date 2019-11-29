@@ -1,11 +1,12 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const MpBuildPlugin = require('./mp-build-plugin');
 const src = path.resolve(__dirname, '../src');
 
 module.exports = {
     // target: 'node',
-    entry: './app.js',
+    entry: {
+        'app.js': './app.js',
+    },
     context: src,
     output: {
         path: path.resolve(__dirname, '../dist/'),
@@ -101,7 +102,6 @@ module.exports = {
         }
     },
     plugins: [
-        new MpBuildPlugin(),
         new CopyPlugin([
             {
                 from: { glob: './**/*', dot: true },
